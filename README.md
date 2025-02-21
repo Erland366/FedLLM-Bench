@@ -1,4 +1,3 @@
-# FedLLM-Bench: Realistic Benchmarks for Federated Learning of Large Language Models
 
 **FedLLM-Bench** is the first realistic benchmark for FedLLM community, which is a follow-up of the [OpenFedLLM](https://arxiv.org/abs/2402.06954) framework. Please check our [paper](https://arxiv.org/pdf/2406.04845) for details and the corresponding empirical study.
 
@@ -21,9 +20,15 @@ The unfiltered version can be downloaded at [unfiltered data](https://drive.goog
 ```
 git clone https://github.com/rui-ye/FedLLM-Bench.git
 cd FedLLMBench
-conda create -n fedllm python=3.10
+conda create --name fedllm \
+    python=3.11 \
+    pytorch-cuda=12.1 \
+    pytorch cudatoolkit xformers -c pytorch -c nvidia -c xformers \
+    -y
 conda activate fedllm
-pip install -r requirements.txt
+
+pip install unsloth
+pip install wandb
 ```
 
 ## Training

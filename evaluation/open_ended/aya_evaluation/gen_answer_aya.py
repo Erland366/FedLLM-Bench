@@ -93,6 +93,8 @@ for language in language_list:
         print(f"\nOutput: \n{result}")
         print("="*100)
 
+
+
         with open(result_path,'w',encoding='utf-8') as output:
             json.dump(answer_dict,output,indent=4,ensure_ascii=False)
 

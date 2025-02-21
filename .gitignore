@@ -178,3 +178,4 @@ data/
 data.zip
 models/
 wandb/
+evaluation/open_ended/aya_evaluation/model_answer
