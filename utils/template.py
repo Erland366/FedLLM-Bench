@@ -83,8 +83,15 @@ def get_formatting_prompts_func(template_name, eos_token,script_args):
     overall_temp, response_temp = TEMPLATE_DICT[template_name]
     def formatting_prompts_func(example):    
         output_texts = []    
-        for i in range(len(example['instruction'])):    
-            text = overall_temp.format(example['instruction'][i], example['response'][i], eos_token)    
+        if isinstance(example['instruction'], str):
+            # Turn the string into a list
+            example_instruction = [example['instruction']]
+            example_response = [example['response']]
+        else:
+            example_instruction = example['instruction']
+            example_response = example['response']
+        for i in range(len(example_instruction)):
+            text = overall_temp.format(example_instruction[i], example_response[i], eos_token)    
             output_texts.append(text)    
         return output_texts    
     
