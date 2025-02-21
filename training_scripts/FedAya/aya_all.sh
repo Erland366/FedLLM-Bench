@@ -12,8 +12,8 @@ lr=2e-5
 
 local_data_dir=data/Fed-Aya/aya_38c_25k.json   # you may uncomment this line if your data is stored locally and include it in the python command
 dataset_name=FedAya
-dataset_sample=25k
-model_name_or_path="/GPFS/data/ruiye-1/models/6fdf2e60f86ff2481f2241aaee459f85b5b0bbb9"
+dataset_sample=25000
+model_name_or_path="Qwen/Qwen2-0.5B"
 output_dir=./models/FedAya/
 
 gpu=0
