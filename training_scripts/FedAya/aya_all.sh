@@ -40,4 +40,5 @@ CUDA_VISIBLE_DEVICES=$gpu python main_sft.py \
  --template "alpaca" \
  --local_data_dir $local_data_dir \
  --gradient_checkpointing \
- --checkpoint_step $checkpoint_step
+ --checkpoint_step $checkpoint_step \
+ --log_with "wandb"
